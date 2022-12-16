@@ -6,9 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class FangraphTopTen{
-	static ArrayList<String> list22 = new ArrayList<String>();
-	ArrayList<String> list21 = new ArrayList<String>();
-	ArrayList<String> list20 = new ArrayList<String>();
+	static String[] list22 = new String[0];
+	static String[] list21 = new String[0];
+	static String[] list20 = new String[0];
 	
 	public static void main(String[] args) throws IOException {
 		final String LINK22 = "https://www.fangraphs.com/leaders.aspx?pos=all&stats=bat&lg=all&qual=y&type=8&season=2022&month=0&season1=2022&ind=0&page=1_131";
@@ -36,9 +36,32 @@ public class FangraphTopTen{
 				}
 			
 }
-		System.out.println(strings);
-		System.out.println("out of for loop");
-		
+		  list22 = strings.toString().split(",");
+		  System.out.println("list22-----------------------------------------------");
+		  for (String a : list22) {
+              System.out.println(a);
+          }
+          
+		//System.out.println(strings);
+		System.out.println();
+		//---------------------------------------------------------
+		/*
+		int startIndex = 0;
+		 int endIndex = 0;
+		 String n;
+		 for(int i = 0; i < strings.length();i++) {
+			 if(strings.charAt(i) == (',')) {
+				 endIndex = i-1;
+				 System.out.println(endIndex);
+			 }
+			 if(Character.isDigit(strings.charAt(i))) {
+				 startIndex = i;
+				 System.out.println(startIndex);
+			 }
+			
+			 //list22.add(strings.substring(startIndex, endIndex));
+		 }
+		*/
 		//----------------------------------------------------------
 		
 		//namesArray(strings);
@@ -68,7 +91,12 @@ public class FangraphTopTen{
 					}
 				
 	}
-			System.out.println(strings);
+			  list21 = strings.toString().split(",");
+			  System.out.println("list21-----------------------------------------------");
+			  for (String a : list21) {
+	              System.out.println(a);
+			  }
+			//System.out.println(strings);
 			System.out.println("out of for loop");
 			
 		}catch(IOException e) {
@@ -95,7 +123,12 @@ public class FangraphTopTen{
 					}
 				
 	}
-			System.out.println(strings);
+			 list20 = strings.toString().split(",");
+			  System.out.println("list20-----------------------------------------------");
+			  for (String a : list20) {
+	              System.out.println(a);
+			  }
+			//System.out.println(strings);
 			System.out.println("out of for loop");
 		}catch(IOException e) {
 			e.printStackTrace();
@@ -129,7 +162,7 @@ public class FangraphTopTen{
 	        }
 	        return row.substring(startIndex, endIndex);
 	    }
-	 public static ArrayList<String> namesArray(StringBuilder strings) {
+	/* public static ArrayList<String> namesArray(StringBuilder strings) {
 		 int startIndex = 0;
 		 int endIndex = 0;
 		 for(int i = 0; i < strings.length();i++) {
@@ -146,7 +179,7 @@ public class FangraphTopTen{
 		 
 		 return list22;
 		 
-	 }
+	 }*/
 }
 
 /*		
